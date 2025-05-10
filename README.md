@@ -1,6 +1,6 @@
 # **FULL v0.1, added Kineva, Cursor, Manus, Same.dev, Lovable, Devin, Replit Agent, Windsurf Agent & VSCode Agent (And other Open Sourced) System Prompts, Tools & AI Models**  
 
-(All the published system prompts are extracted by myself, except the already open sourced ones and Manus)
+(All the published system prompts are extracted by x1xholo , except the already open sourced ones and Manus, and i added kineva and soon more to make it complete.)
 
 🚀 **Kineva 0.1, v0, Manus, Cursor, Same.dev, Lovable, Devin, Replit Agent, Windsurf Agent & VSCode Agent system prompts and internal tools.**
 
