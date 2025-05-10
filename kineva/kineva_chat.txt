@@ -1,0 +1,76 @@
+
+<system_prompt>
+You are a multimodal AI assistant powered by KINEVA-LLM. You operate in a visual-textual development environment where users can provide both natural language instructions and images. Your primary task is to collaboratively solve user problems that involve code, text, and visual inputs such as screenshots, diagrams, UIs, or photos. Each time the user interacts with you, the system may attach additional contextual data such as open files, code snippets, uploaded images, or session history. You must reason jointly over this information to deliver relevant, accurate, and helpful responses.
+
+When an image is provided, analyze its contents in detail and relate it directly to any accompanying text or user query. If no image is present, respond as a text-based assistant. If both are present, prioritize multimodal reasoning. You are expected to follow the user's instructions carefully, denoted by the <user_query> tag.
+
+<communication>
+When using markdown in assistant messages, use backticks to format filenames, directory names, function names, or class names. Use \( and \) for inline math, and \[ \] for block math.
+</communication>
+
+<reasoning>
+Always aim to combine visual and textual understanding where possible. Extract relevant information from diagrams or screenshots if provided. Maintain precision, avoid hallucination, and be concise.
+</reasoning>
+
+<tool_usage>
+You have access to tools that help analyze files, extract image content, and navigate code. Use these tools efficiently, and prefer solving tasks independently before prompting the user for clarification. If information is missing or options must be weighed, ask the user clearly.
+</tool_usage>
+
+<image_processing>
+When an image is uploaded, perform a visual description and identify key elements: text in the image, layout, structure, patterns, errors, or anomalies. Use this information to inform your response or analysis.
+</image_processing>
+</system_prompt>
+
+<document>
+1. Introduction  
+Human visual perception is based on hierarchical and modular processing, enabling the brain to efficiently analyze complex visual scenes. Specialized brain regions such as V1 and V2 detect basic features (e.g., edges, colors) and forward this information to higher-level areas where more detailed object recognition occurs. This distribution and hierarchy of processing serves as the inspiration for the KINEVA framework.
+
+In this paper, we present KINEVA, a flexible and scalable computer vision framework based on the principles of modular processing and the transfer of information between models of different specializations. KINEVA’s architecture is designed to enable efficient, hierarchical processing through the use of supercategories, similar to how visual processing is organized in the brain.
+
+2. Biological Inspiration: Hierarchical and Modular Processing in the Brain  
+Felleman and Van Essen (1991) described visual processing in the brain as a distributed and hierarchical system in which different cortical regions process different aspects of visual information. Lower areas such as V1 and V2 capture basic visual information, which is then passed on to higher areas such as V4 and the inferotemporal cortex to recognize more complex features.
+
+Similarly, KINEVA works with a modular and hierarchical architecture. The first processing level, referred to as the "supercategory" level, identifies broad, general features (e.g., people or vehicles). This information is then forwarded to subsequent modules that analyze more specific features, such as facial recognition or vehicle types. This cascading of information along a hierarchy mirrors the principles observed in the visual cortex.
+
+3. The KINEVA Framework: Modular and Scalable Architecture  
+3.1 Supercategories and Gradual Refinement  
+At the core of KINEVA lies its hierarchical organization into supercategories. The first model is designed to detect general objects at high resolution. These fundamental detections are then passed to specialized modules that focus on subcategories and specific attributes. This structure allows downstream models to operate with reduced computational intensity, thereby increasing efficiency and reducing resource requirements.
+
+For example, the first model might detect a person in a scene and forward this information to another model that analyzes specific details such as facial expressions or clothing. This hierarchical flow of information resembles the visual cortex, where coarse features are processed in early areas and then forwarded to more specialized regions.
+
+3.2 Modularity and Flexibility  
+One major advantage of the KINEVA framework is its modularity. Each model is autonomous and can function independently of others. This enables KINEVA to be flexibly adapted to various tasks and hardware platforms. Modules can operate in parallel or sequentially depending on the task and available resources.
+
+Moreover, KINEVA’s hierarchical structure allows dynamic combination of models as needed. This enables fine-tuned adaptation to specific application requirements without extensive computational demand. This concept of modular processing reflects biological mechanisms in which different brain areas work in parallel and hierarchically to enhance visual perception.
+
+3.3 Combining Models and Feedback Mechanisms  
+Another biologically inspired feature of KINEVA is the possibility of feedback between modules. Once a supercategory is detected by a high-resolution model, subsequent models can refine this information and, if necessary, send feedback upstream. This mirrors feedback mechanisms used in the brain's visual processing system, where information flows both forward and backward between layers.
+
+Through this feedback process, KINEVA ensures that only relevant and specific information is passed into deeper processing layers. This further reduces computational load at later stages and enables more efficient processing of large datasets.
+
+4. Distributed Processing and Hardware Integration  
+4.1 Distributing Models Across Hardware Platforms  
+KINEVA is designed to be scalable across a wide range of hardware platforms. Each model can run on high-performance host systems or distributed networks. This distributed processing allows for efficient, real-time analysis of large datasets, especially when multiple modules work in parallel.
+
+On powerful systems, high-resolution models can run centrally, while specialized models requiring fewer resources can operate on lighter platforms. This flexible hardware integration allows for dynamic adjustment to available resources, maximizing system efficiency.
+
+4.2 Scalability and Dynamic Adaptation  
+A key feature of KINEVA is its ability to dynamically adapt processing based on available resources. This means that as task complexity increases or additional hardware becomes available, new modules can be added and combined without needing to retrain or reconfigure the entire system.
+
+5. Comparison with Traditional Approaches  
+Traditional approaches in computer vision often rely on monolithic models that analyze the entire image uniformly, without differentiating between coarse and specific features. This can lead to high computational costs, particularly for complex tasks. Many such systems are also limited to a single resolution or spectrum.
+
+In contrast, KINEVA offers several advantages:
+
+- **Hierarchical Processing**: By combining supercategories with specialized modules, computational effort is reduced, as not all models require the same resolution or specialization.  
+- **Modularity and Flexibility**: Dynamic model composition allows flexible adaptation to various tasks, while monolithic models are often rigid.  
+- **Feedback Mechanisms**: Like the brain, KINEVA enables feedback between modules, optimizing processing and forwarding only relevant information.
+
+6. Future Developments and Outlook  
+The modular and hierarchical structure of KINEVA offers numerous opportunities for future development. One potential extension is the integration of additional feedback loops that enable even more precise real-time model adjustments. New categories and modules could also be developed for highly specific tasks or novel visual spectra.
+
+Moreover, expanding the integration of feedback mechanisms could support even more dynamic model adaptation during processing, making the system even more robust and efficient.
+
+**Conclusion**  
+The KINEVA framework is based on a biologically inspired, modular, and hierarchical approach to visual processing, maximizing efficiency through the combination of supercategories and specialized models. Its flexible adaptation to diverse tasks and hardware platforms, along with dynamic model distribution, enables KINEVA to function effectively across a wide range of applications and environments.
+</document>
